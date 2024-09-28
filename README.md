@@ -29,7 +29,7 @@ This Terraform project sets up an AWS infrastructure with proxy servers and web 
     -   Locking is handled by DynamoDB to prevent conflicts during updates.
 
 ### Architecture Summary
-![terraform-project drawio](https://github.com/user-attachments/assets/61717f49-e4ef-4ad0-ad43-ac036f7401aa)# Terraform AWS Project: Web Servers with Proxy and Load Balancers 
+![terraform-project drawio](https://github.com/user-attachments/assets/61717f49-e4ef-4ad0-ad43-ac036f7401aa)
 
 
 ## 📋Prerequisites
@@ -54,6 +54,8 @@ The project sets up a **Virtual Private Cloud (VPC)** with the following network
     -   An Internet Gateway is attached to the VPC to allow internet access for the public subnets.
 5.  **NAT Gateway**:
     -   The NAT Gateway is deployed in one of the public subnets to provide internet access to the web servers in the private subnets. This ensures that the private instances can initiate outbound internet traffic (for updates, etc.) but are not exposed to incoming internet traffic.
+
+![tf8](https://github.com/user-attachments/assets/bc92dea0-b280-4992-9a56-7f37099cd923)
 
 ### Routing:
 
@@ -91,6 +93,7 @@ terraform workspace select Dev
 ```
 terraform apply
 ``` 
+![tf1](https://github.com/user-attachments/assets/efb60bd7-8d70-4025-880d-e6af32dc343a)
 
 ### 5. Get Web Server IPs
 
@@ -112,17 +115,17 @@ After applying the Terraform configuration, the **Network Load Balancer (NLB)** 
 2.  Copy the **NLB DNS Name** from the output.
     
 
-###  Testing the Connection
+### ✔️Testing the Connection
 
 -   Open your browser and paste the NLB DNS name into the address bar. You should see the web application hosted on the private web servers.
 - Since you have **two web servers**, refreshing the page will distribute the traffic across both servers via the **Application Load Balancer (ALB)**. Each refresh may connect you to a different web server depending on the load balancing algorithm.
 
+![tf2](https://github.com/user-attachments/assets/94830e9e-4359-43d3-bdab-f89a69bac93d)
 
-### ✔️Verifying the Traffic
-
-Once you access the NLB DNS, it will forward the traffic to the proxy servers in the public subnets, which will then direct it to the web servers in the private subnets.
+![tf3](https://github.com/user-attachments/assets/8d45ad1e-fc0e-44ab-bb2e-e5fef7c08891)
 
 ----------
+
 
 ## Project Breakdown
 
@@ -148,3 +151,4 @@ terraform {
   }
 } 
 ```
+![tf4](https://github.com/user-attachments/assets/6fc647ed-aa2c-4ba1-9c9c-e228ebe49c69)
