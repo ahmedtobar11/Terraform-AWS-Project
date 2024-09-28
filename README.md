@@ -20,7 +20,7 @@ This Terraform project sets up an AWS infrastructure with proxy servers and web 
 4.  **Proxy Servers** (Public Subnet):
     
     -   Managed by a **Network Load Balancer (NLB)**.
-    -   ![tf7111](https://github.com/user-attachments/assets/41f8bbdb-2c13-4648-bb7c-edf5a4081e7e)
+       ![tf7111](https://github.com/user-attachments/assets/41f8bbdb-2c13-4648-bb7c-edf5a4081e7e)
 
 5.  **Web Servers** (Private Subnet):
     
