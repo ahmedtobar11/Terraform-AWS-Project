@@ -20,11 +20,16 @@ This Terraform project sets up an AWS infrastructure with proxy servers and web 
 4.  **Proxy Servers** (Public Subnet):
     
     -   Managed by a **Network Load Balancer (NLB)**.
+
+ ![tf7](https://github.com/user-attachments/assets/8a7e2026-b0e0-4058-a6ca-2a9e7a6eddca)
+
 5.  **Web Servers** (Private Subnet):
     
     -   Managed by an **Application Load Balancer (ALB)**.
+      
+ ![tf6](https://github.com/user-attachments/assets/76a69e8a-45c0-4a69-9d74-800aeeecfdd6)
+
 6.  **State Management**:
-    
     -   State is stored in an S3 bucket (`terraform-project-backend-s3`).
     -   Locking is handled by DynamoDB to prevent conflicts during updates.
 
