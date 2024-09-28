@@ -25,8 +25,7 @@ This Terraform project sets up an AWS infrastructure with proxy servers and web 
 5.  **Web Servers** (Private Subnet):
     
     -   Managed by an **Application Load Balancer (ALB)**.
-      
- ![tf6](https://github.com/user-attachments/assets/76a69e8a-45c0-4a69-9d74-800aeeecfdd6)
+       ![tf6111](https://github.com/user-attachments/assets/a51fc41c-fa57-4a5a-9457-843719aee545)
 
 6.  **State Management**:
     -   State is stored in an S3 bucket (`terraform-project-backend-s3`).
